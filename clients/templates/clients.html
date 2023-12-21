@@ -23,11 +23,11 @@
         <form action="{% url 'clients' %}" method="POST">{% csrf_token %}
                 <div class="col-md">
                     <p>First name:</p>
-                    <input type="text" class="form-control" placeholder="First Name">
+                    <input type="text" class="form-control" placeholder="First Name" name="name">
                 </div>
                 <div class="col-md">
                     <p>Last name:</p>
-                    <input type="text" class="form-control" placeholder="Last Name">
+                    <input type="text" class="form-control" placeholder="Last Name" name="lastname">
                 </div>
             </div>
             <br>
