@@ -18,6 +18,41 @@
         </div>
 
     </div>
-</div>
 
+    <div class="add-client">
+        <form action="{% url 'clients' %}" method="POST">{% csrf_token %}
+                <div class="col-md">
+                    <p>First name:</p>
+                    <input type="text" class="form-control" placeholder="First Name">
+                </div>
+                <div class="col-md">
+                    <p>Last name:</p>
+                    <input type="text" class="form-control" placeholder="Last Name">
+                </div>
+            </div>
+            <br>
+            <p>E-mail:</p>
+            <input type="email" class="form-control" placeholder="name@email.com" name="email">
+            <br>
+            <p>CPF:</p>
+            <input type="text" class="form-control" placeholder="___.___.___-__" name="cpf">
+            <hr style="background-color:gray;">
+            <div class="add-car">
+                <h3>Cars</h3>
+                <span class="btn-add-cars" onclick="add_car()">+ add car</span>
+  
+                <div id="form-car">
+  
+                </div>
+  
+            </div>
+  
+            <br>
+            <input type="submit" value="Register" class="btn-main">
+  
+        </form>
+        
+    </div>
+</div>
+<script src="{% static 'clients/js/clients.js' %}"></script>
 {% endblock %}
