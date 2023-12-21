@@ -23,26 +23,32 @@
         <form action="{% url 'clients' %}" method="POST">{% csrf_token %}
                 <div class="col-md">
                     <p>First name:</p>
-                    <input type="text" class="form-control" placeholder="First Name" name="name">
+                    <input type="text" class="form-control" placeholder="First Name" name="name" value="{{name}}">
                 </div>
                 <div class="col-md">
                     <p>Last name:</p>
-                    <input type="text" class="form-control" placeholder="Last Name" name="lastname">
+                    <input type="text" class="form-control" placeholder="Last Name" name="lastname" value="{{lastname}}">
                 </div>
-            </div>
             <br>
             <p>E-mail:</p>
-            <input type="email" class="form-control" placeholder="name@email.com" name="email">
+            <input type="email" class="form-control" placeholder="name@email.com" name="email" value="{{email}}">
             <br>
             <p>CPF:</p>
-            <input type="text" class="form-control" placeholder="___.___.___-__" name="cpf">
+            <input type="text" class="form-control" placeholder="___.___.___-__" name="cpf" value="{{cpf}}">
             <hr style="background-color:gray;">
             <div class="add-car">
                 <h3>Cars</h3>
                 <span class="btn-add-cars" onclick="add_car()">+ add car</span>
-  
+
                 <div id="form-car">
-  
+               {% for car, plate, year in cars%}
+                <br>
+                <div class='row'>
+                    <div class='col-md'> <input type='text' placeholder='car' class='form-control' name='car' value="{{car}}"></div>
+                    <div class='col-md'><input type='text' placeholder='plate' class='form-control' name='plate'value="{{plate}}"> </div>
+                    <div class='col-md'><input type='number' placeholder='year' class='form-control' name='year' value="{{year}}"> </div>
+                </div>
+               {% endfor %}
                 </div>
   
             </div>
